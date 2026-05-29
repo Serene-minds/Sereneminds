@@ -55,12 +55,11 @@ serene-minds/
 ├── index.html          # Main HTML (Tailwind via CDN + JS)
 ├── css/
 │   └── styles.css      # All custom styles (extracted for maintainability)
-├── assets/
-│   ├── logo1.jpg       # Brand logo
-│   ├── hero-bg.jpg     # Hero background
-│   ├── article1.jpg    # Article & testimonial images
-│   ├── article2.jpg
-│   └── meditation.jpg
+├── logo1.jpg           # Brand logo (in root, next to index.html)
+├── hero-bg.jpg         # Hero background
+├── article1.jpg        # Article & testimonial images
+├── article2.jpg
+├── meditation.jpg
 ├── .github/
 │   └── workflows/
 │       └── deploy-pages.yml   # GitHub Pages deployment
@@ -100,7 +99,7 @@ Your live site will be available at:
 
 | Problem                    | Likely Cause                                      | Fix |
 |---------------------------|---------------------------------------------------|-----|
-| Images not showing        | Images uploaded to root instead of `assets/` folder | Make sure all images are inside the `assets/` folder locally, then push |
+| Images not showing        | Image paths in HTML don't match actual file locations | Keep images in root (next to index.html) and use paths like `logo1.jpg` |
 | Site shows old version    | GitHub Pages still using "Deploy from a branch"   | Set Source to **GitHub Actions** in Settings → Pages |
 | 404 on css/styles.css     | Workflow hasn't run yet                           | Go to **Actions** tab and wait for the workflow to complete |
 | Changes not live          | Pushed to wrong branch                            | Always push to `main` branch |
@@ -111,7 +110,7 @@ Your live site will be available at:
 
 | What you want to change       | Where to edit                  |
 |-------------------------------|--------------------------------|
-| Logo & hero images            | `assets/` folder               |
+| Logo & hero images            | Root folder (same as index.html) |
 | Colors & typography           | `css/styles.css` (CSS variables + custom classes) + Tailwind CDN |
 | Content / copy                | Directly in `index.html`       |
 | Add new articles              | Add to the articles grid + `articleData` array in `<script>` |
