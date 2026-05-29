@@ -6,7 +6,7 @@ This is the pure static version (single `index.html` + assets) — lightweight, 
 
 **Live Demo:** Deploy to GitHub Pages in under 2 minutes.
 
-![Serene Minds](assets/hero-bg.jpg)
+![Serene Minds](hero-bg.jpg)
 
 ## ✨ Features
 
