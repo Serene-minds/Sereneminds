@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Minds • Find Your Inner Calm</title>
+    <meta name="description" content="Premium psychology and mental wellness platform offering expert insights, mindfulness practices, and compassionate guidance.">
+    <link rel="icon" href="assets/logo1.jpg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts - Optimized loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="serene-bg text-[#2c3e50] overflow-x-hidden">
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#f8f5f2]/95 border-b border-[#e8e1d9] transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 md:px-10 flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="flex items-center">
+                        <img src="assets/logo1.jpg" alt="Serene Minds Logo" class="h-11 w-auto object-contain drop-shadow-sm">
+                    </div>
+                    <div>
+                        <span class="font-semibold tracking-tight text-2xl text-[#2c3e50]">Serene Minds</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-x-9 text-[15px]">
+                    <a href="#home" class="nav-link text-[#2c3e50] hover:text-[#1abc9c] font-medium text-sm tracking-[0.2px]">Home</a>
+                    <a href="#topics" class="nav-link text-[#2c3e50] hover:text-[#1abc9c] font-medium text-sm tracking-[0.2px]">Topics</a>
+                    <a href="#articles" class="nav-link text-[#2c3e50] hover:text-[#1abc9c] font-medium text-sm tracking-[0.2px]">Insights</a>
+                    <a href="#resources" class="nav-link text-[#2c3e50] hover:text-[#1abc9c] font-medium text-sm tracking-[0.2px]">Resources</a>
+                    <a href="#about" class="nav-link text-[#2c3e50] hover:text-[#1abc9c] font-medium text-sm tracking-[0.2px]">About</a>
+                </div>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-x-3">
+                    <!-- Search -->
+                    <button onclick="openSearchModal()" 
+                            class="flex items-center justify-center w-10 h-10 text-[#6b7f6b] hover:text-[#1abc9c] hover:bg-white rounded-2xl transition-all duration-200 border border-transparent hover:border-[#e8e1d9]">
+                        <i class="fa-solid fa-search text-lg"></i>
+                    </button>
+
+                    <!-- Begin Your Journey Button -->
+                    <button onclick="openJourneyModal()"
+                            class="hidden md:flex items-center px-6 py-2.5 bg-[#1abc9c] hover:bg-[#159d84] text-white text-sm font-semibold rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 tracking-[0.3px]">
+                        Begin Your Journey
+                    </button>
+
+                    <!-- Mobile Menu -->
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+                            class="lg:hidden flex items-center justify-center w-10 h-10 text-[#6b7f6b] hover:text-[#2c3e50] hover:bg-white rounded-2xl transition-colors border border-[#e8e1d9]">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e8e1d9] bg-[#f8f5f2]">
+            <div class="px-6 py-6 flex flex-col gap-y-1 text-[15px]">
+                <a href="#home" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-white rounded-2xl text-[#2c3e50]">Home</a>
+                <a href="#topics" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-white rounded-2xl text-[#2c3e50]">Topics</a>
+                <a href="#articles" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-white rounded-2xl text-[#2c3e50]">Insights</a>
+                <a href="#resources" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-white rounded-2xl text-[#2c3e50]">Resources</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="py-3 px-4 hover:bg-white rounded-2xl text-[#2c3e50]">About Us</a>
+                
+                <div class="pt-4 mt-2 border-t border-[#e8e1d9]">
+                    <button onclick="toggleMobileMenu(); openJourneyModal();" 
+                            class="w-full flex items-center justify-center py-3 bg-[#1abc9c] text-white font-semibold rounded-3xl">
+                        Begin Your Journey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="pt-20 relative min-h-[100dvh] flex items-center bg-[#f8f5f2] overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#e8e1d9_0.8px,transparent_1px)] bg-[length:5px_5px] opacity-40"></div>
+        
+        <!-- Hero Background Image with overlay -->
+        <div class="absolute inset-0">
+            <img src="assets/hero-bg.jpg" alt="Serene landscape background" 
+                 class="w-full h-full object-cover opacity-40 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#f8f5f2] via-[#f8f5f2]/90 to-[#f8f5f2]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#f8f5f2]/70 via-transparent to-[#f8f5f2]/60"></div>
+        </div>
+
+        <div class="max-w-screen-2xl mx-auto relative z-10 px-6 md:px-12 pt-12 pb-20">
+            <div class="max-w-4xl">
+                <!-- Logo in Hero -->
+                <div class="mb-9 flex justify-start">
+                    <div class="inline-flex items-center gap-x-4 bg-white/70 backdrop-blur-md px-5 py-3 rounded-3xl border border-[#e8e1d9] shadow-sm">
+                        <img src="assets/logo1.jpg" alt="Serene Minds lotus logo" class="h-14 w-auto drop-shadow">
+                        <div class="flex flex-col">
+                            <span class="font-semibold text-xl tracking-tight text-[#2c3e50]">Serene Minds</span>
+                            <span class="text-xs text-[#6b7f6b] -mt-0.5 tracking-[1.5px]">EST 2017</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="heading-serif text-[72px] md:text-[84px] leading-[1.02] tracking-[-3.6px] text-[#2c3e50] mb-6">
+                    Find Your<br>Inner Calm
+                </h1>
+                
+                <p class="max-w-lg text-xl md:text-[21px] leading-tight text-[#5c6c6b] font-light tracking-[-0.1px]">
+                    Expert psychology insights, mindfulness practices, and compassionate guidance for a more peaceful life.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
+                    <a href="#topics" 
+                       class="premium-button group inline-flex items-center justify-center px-9 py-[17px] bg-[#2c3e50] text-white text-[15px] font-semibold tracking-[0.4px] rounded-3xl hover:bg-[#1f2e3c]">
+                        <span>Explore Topics</span>
+                        <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    
+                    <a href="#articles" 
+                       class="inline-flex items-center justify-center px-8 py-[17px] bg-white border border-[#d4c9b8] hover:bg-[#f8f5f2] text-[#2c3e50] text-[15px] font-semibold tracking-[0.4px] rounded-3xl transition-colors">
+                        Read Latest Articles
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-7 mt-14">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden ring-1 ring-[#e8e1d9]"><img src="assets/article1.jpg" class="object-cover"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden ring-1 ring-[#e8e1d9]"><img src="assets/meditation.jpg" class="object-cover"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden ring-1 ring-[#e8e1d9] bg-[#a8b5a2]"></div>
+                    </div>
+                    <div>
+                        <div class="text-xs tracking-[0.5px] text-[#6b7f6b]">JOIN <span class="font-semibold text-[#2c3e50]">47,892</span> OTHERS ON THIS JOURNEY</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-y-1.5 text-[#6b7f6b]">
+            <div class="text-[10px] tracking-[2px] font-medium">SCROLL TO BEGIN</div>
+            <i class="fa-solid fa-chevron-down animate-bounce text-sm"></i>
+        </div>
+    </section>
+
+    <!-- ==================== FOCUS AREAS / TOPICS ==================== -->
+    <section id="topics" class="serene-section max-w-screen-2xl mx-auto px-6 md:px-12 pt-16 pb-20">
+        <div class="flex flex-col items-center text-center mb-12">
+            <div class="lotus-divider w-16 mb-5">
+                <i class="fa-solid fa-spa text-[#1abc9c]"></i>
+            </div>
+            <h2 class="heading-serif text-5xl md:text-6xl tracking-[-1.8px] text-[#2c3e50]">Our Focus Areas</h2>
+            <p class="max-w-md mt-4 text-lg text-[#5c6c6b]">Thoughtfully curated pathways to deeper understanding and lasting wellbeing</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Topic Cards -->
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Anxiety &amp; Stress')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-cloud-sun text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Anxiety &amp; Stress</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Evidence-based tools to understand, manage, and reduce anxiety in daily life.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Mindfulness &amp; Meditation')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-spa text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Mindfulness &amp; Meditation</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Practical techniques and guided practices to cultivate presence and peace.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Emotional Intelligence')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-heart text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Emotional Intelligence</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Develop the capacity to understand, navigate, and express emotions with wisdom.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Self-Compassion')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-hands-holding-heart text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Self-Compassion</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Learn to treat yourself with the same kindness you offer to those you love.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Relationships')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-users text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Healthy Relationships</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Build deeper connections, communicate with care, and nurture meaningful bonds.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Trauma Healing')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-seedling text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Trauma Healing</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Gentle, trauma-informed approaches to processing difficult experiences safely.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Sleep &amp; Rest')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Sleep &amp; Restorative Rest</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Evidence-backed practices for better sleep and true nervous system restoration.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+
+            <div class="topic-card group card p-7 rounded-3xl calm-shadow cursor-pointer" onclick="selectTopic('Personal Growth')">
+                <div class="w-12 h-12 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-2xl mb-6 focus-icon">
+                    <i class="fa-solid fa-mountain text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight mb-2">Personal Growth</h4>
+                <p class="text-[#5c6c6b] leading-relaxed text-[15px]">Move through life transitions with clarity, purpose, and self-trust.</p>
+                <div class="mt-5 text-xs font-medium text-[#1abc9c] flex items-center gap-1.5 group-hover:gap-2.5 transition-all">EXPLORE PATHWAYS <i class="fa-solid fa-arrow-right text-xs"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LATEST INSIGHTS / ARTICLES ==================== -->
+    <section id="articles" class="serene-section bg-white border-y border-[#e8e1d9] py-16">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-11">
+                <div>
+                    <h2 class="heading-serif text-5xl md:text-[56px] tracking-[-1.8px] text-[#2c3e50]">Latest Insights</h2>
+                    <p class="mt-2 text-lg text-[#5c6c6b]">Thoughtful writing from our clinicians and researchers</p>
+                </div>
+                <a href="#" onclick="showAllArticles(); return false;" 
+                   class="inline-flex items-center text-sm font-semibold tracking-wider text-[#1abc9c] hover:text-[#159d84]">
+                    VIEW ALL ARTICLES <i class="ml-2 fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Article 1 -->
+                <div onclick="openArticleModal(0)" class="article-card group cursor-pointer bg-white border border-[#f0ebe3] rounded-3xl overflow-hidden flex flex-col h-full calm-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/article1.jpg" alt="Woman in peaceful moment" class="w-full h-full object-cover group-hover:scale-[1.07] transition-transform duration-700">
+                        <div class="absolute top-4 left-4">
+                            <span class="article-tag px-3 py-1 bg-white/95 text-[#2c3e50] font-medium rounded-full shadow-sm">MINDFULNESS</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center text-xs text-[#6b7f6b] mb-3">
+                            <span>Dr. Lena Voss</span>
+                            <span class="mx-2">•</span>
+                            <span>11 min read</span>
+                        </div>
+                        <h4 class="font-semibold text-[19px] leading-tight tracking-[-0.3px] group-hover:text-[#1abc9c] transition-colors">The Quiet Power of Doing Less</h4>
+                        <p class="mt-auto pt-4 text-sm text-[#5c6c6b] line-clamp-3">In a culture obsessed with productivity, learning to rest is one of the most radical acts of self-care we can offer ourselves.</p>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div onclick="openArticleModal(1)" class="article-card group cursor-pointer bg-white border border-[#f0ebe3] rounded-3xl overflow-hidden flex flex-col h-full calm-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/article2.jpg" alt="Hands holding lotus" class="w-full h-full object-cover group-hover:scale-[1.07] transition-transform duration-700">
+                        <div class="absolute top-4 left-4">
+                            <span class="article-tag px-3 py-1 bg-white/95 text-[#2c3e50] font-medium rounded-full shadow-sm">SELF-COMPASSION</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center text-xs text-[#6b7f6b] mb-3">
+                            <span>Dr. Marcus Hale</span>
+                            <span class="mx-2">•</span>
+                            <span>14 min read</span>
+                        </div>
+                        <h4 class="font-semibold text-[19px] leading-tight tracking-[-0.3px] group-hover:text-[#1abc9c] transition-colors">How to Speak to Yourself When It Hurts</h4>
+                        <p class="mt-auto pt-4 text-sm text-[#5c6c6b] line-clamp-3">The words we use with ourselves during difficult moments shape our capacity to heal and grow more than we realize.</p>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div onclick="openArticleModal(2)" class="article-card group cursor-pointer bg-white border border-[#f0ebe3] rounded-3xl overflow-hidden flex flex-col h-full calm-shadow">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#e6f0f4] to-[#f0ebe3] flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fa-solid fa-brain text-[#a8b5a2] text-5xl mb-3"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="article-tag px-3 py-1 bg-white/95 text-[#2c3e50] font-medium rounded-full shadow-sm">EMOTIONAL HEALTH</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center text-xs text-[#6b7f6b] mb-3">
+                            <span>Dr. Aisha Patel</span>
+                            <span class="mx-2">•</span>
+                            <span>9 min read</span>
+                        </div>
+                        <h4 class="font-semibold text-[19px] leading-tight tracking-[-0.3px] group-hover:text-[#1abc9c] transition-colors">The Hidden Cost of Emotional Avoidance</h4>
+                        <p class="mt-auto pt-4 text-sm text-[#5c6c6b] line-clamp-3">Why numbing difficult feelings ultimately costs us the joy and connection we long for most.</p>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div onclick="openArticleModal(3)" class="article-card group cursor-pointer bg-white border border-[#f0ebe3] rounded-3xl overflow-hidden flex flex-col h-full calm-shadow">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#f4ede6] to-[#e8f0f4] flex items-center justify-center">
+                        <div class="text-center px-6">
+                            <i class="fa-solid fa-moon text-[#a8b5a2] text-5xl mb-3"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="article-tag px-3 py-1 bg-white/95 text-[#2c3e50] font-medium rounded-full shadow-sm">SLEEP &amp; REST</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center text-xs text-[#6b7f6b] mb-3">
+                            <span>Dr. Theo Rivera</span>
+                            <span class="mx-2">•</span>
+                            <span>18 min read</span>
+                        </div>
+                        <h4 class="font-semibold text-[19px] leading-tight tracking-[-0.3px] group-hover:text-[#1abc9c] transition-colors">The Sacred Art of Winding Down</h4>
+                        <p class="mt-auto pt-4 text-sm text-[#5c6c6b] line-clamp-3">A gentle evening ritual framework that helps the nervous system transition into deep, healing rest.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY SERENE MINDS ==================== -->
+    <section id="about" class="serene-section max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
+        <div class="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center">
+            <div class="lg:col-span-5">
+                <div class="lotus-divider w-10 mb-6">
+                    <i class="fa-solid fa-spa text-[#1abc9c]"></i>
+                </div>
+                <h2 class="heading-serif text-6xl tracking-[-1.6px] leading-none text-[#2c3e50]">Why Serene Minds?</h2>
+                <p class="mt-6 text-lg text-[#5c6c6b]">We believe that healing is not about fixing yourself — it’s about remembering who you already are underneath the noise.</p>
+                
+                <div class="mt-8">
+                    <div class="flex items-center gap-x-3 text-sm">
+                        <div class="px-5 py-2 bg-white border border-[#e8e1d9] rounded-3xl text-[#6b7f6b]">
+                            <span class="font-semibold text-[#2c3e50]">94%</span> of members report lasting improvement
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 grid sm:grid-cols-3 gap-5">
+                <div class="bg-white border border-[#f0ebe3] rounded-3xl p-7">
+                    <div class="text-[#1abc9c] mb-5"><i class="fa-solid fa-shield-halved text-3xl"></i></div>
+                    <h5 class="font-semibold text-lg mb-3 tracking-tight">Evidence-Informed</h5>
+                    <p class="text-[#5c6c6b] text-sm leading-relaxed">Every practice and insight is grounded in peer-reviewed psychology and contemplative traditions.</p>
+                </div>
+                <div class="bg-white border border-[#f0ebe3] rounded-3xl p-7">
+                    <div class="text-[#1abc9c] mb-5"><i class="fa-solid fa-heart text-3xl"></i></div>
+                    <h5 class="font-semibold text-lg mb-3 tracking-tight">Radically Compassionate</h5>
+                    <p class="text-[#5c6c6b] text-sm leading-relaxed">We reject shame-based approaches. Healing happens through safety, slowness, and genuine kindness.</p>
+                </div>
+                <div class="bg-white border border-[#f0ebe3] rounded-3xl p-7">
+                    <div class="text-[#1abc9c] mb-5"><i class="fa-solid fa-users text-3xl"></i></div>
+                    <h5 class="font-semibold text-lg mb-3 tracking-tight">Human First</h5>
+                    <p class="text-[#5c6c6b] text-sm leading-relaxed">Our clinicians and writers are real humans who have walked their own paths of healing and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="serene-section bg-[#2c3e50] py-20 text-white relative overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col items-center text-center mb-12">
+                <div class="text-[#1abc9c] mb-3"><i class="fa-solid fa-comments text-3xl"></i></div>
+                <h2 class="heading-serif text-white text-5xl md:text-[56px] tracking-[-1.5px]">Words from our community</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card bg-[#374d60] rounded-3xl p-7">
+                    <div class="flex mb-6 text-[#1abc9c]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <blockquote class="text-[15px] leading-relaxed italic text-[#d1d9d6]">
+                        “Serene Minds helped me finally understand my anxiety instead of fighting it. For the first time in years, I feel like myself again.”
+                    </blockquote>
+                    <div class="mt-7 flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-[#1abc9c]/30 flex-shrink-0"></div>
+                        <div>
+                            <div class="font-medium text-sm">Elena M.</div>
+                            <div class="text-xs text-[#8a9aa1]">Therapist &amp; mother of two</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-[#374d60] rounded-3xl p-7">
+                    <div class="flex mb-6 text-[#1abc9c]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-[15px] leading-relaxed italic text-[#d1d9d6]">
+                        “The guided meditations and journal prompts became the anchor of my day. I’ve never felt more emotionally steady.”
+                    </blockquote>
+                    <div class="mt-7 flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-[#1abc9c]/30 flex-shrink-0"></div>
+                        <div>
+                            <div class="font-medium text-sm">Raj K.</div>
+                            <div class="text-xs text-[#8a9aa1]">Software engineer, 4 years with Serene Minds</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-[#374d60] rounded-3xl p-7">
+                    <div class="flex mb-6 text-[#1abc9c]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-[15px] leading-relaxed italic text-[#d1d9d6]">
+                        “After experiencing loss, the trauma-informed resources gave me language and permission to grieve at my own pace. I felt held.”
+                    </blockquote>
+                    <div class="mt-7 flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-[#1abc9c]/30 flex-shrink-0"></div>
+                        <div>
+                            <div class="font-medium text-sm">Sofia L.</div>
+                            <div class="text-xs text-[#8a9aa1]">Artist &amp; writer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card bg-[#374d60] rounded-3xl p-7">
+                    <div class="flex mb-6 text-[#1abc9c]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-[15px] leading-relaxed italic text-[#d1d9d6]">
+                        “The breathing exercises alone transformed my relationship with my nervous system. I now fall asleep peacefully most nights.”
+                    </blockquote>
+                    <div class="mt-7 flex items-center gap-x-3">
+                        <div class="w-9 h-9 rounded-2xl bg-[#1abc9c]/30 flex-shrink-0"></div>
+                        <div>
+                            <div class="font-medium text-sm">Daniel H.</div>
+                            <div class="text-xs text-[#8a9aa1]">Founder &amp; father</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FREE RESOURCES ==================== -->
+    <section id="resources" class="serene-section max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
+        <div class="flex flex-col lg:flex-row lg:items-end gap-y-4 lg:justify-between mb-11">
+            <div>
+                <div class="uppercase text-xs tracking-[2px] font-semibold text-[#1abc9c] mb-2">Completely Free</div>
+                <h2 class="heading-serif text-5xl md:text-[56px] tracking-[-1.8px] text-[#2c3e50]">Free Resources</h2>
+            </div>
+            <p class="max-w-sm text-[#5c6c6b]">Tools to support your practice between sessions and in daily life.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Resource 1: Guided Meditations -->
+            <div class="resource-card group card p-7 rounded-3xl calm-shadow flex flex-col">
+                <div class="resource-icon w-11 h-11 bg-[#e6f4f1] text-[#1abc9c] rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-headphones text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight">Guided Meditations</h4>
+                <p class="text-sm mt-2 text-[#5c6c6b] flex-1">A growing library of 5–25 minute meditations for anxiety, sleep, self-compassion, and focus.</p>
+                <button onclick="startGuidedMeditations()" class="mt-6 text-sm font-semibold text-[#1abc9c] hover:text-[#159d84] flex items-center gap-2 transition-all group-hover:gap-3">
+                    OPEN LIBRARY <i class="fa-solid fa-play text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Resource 2: Journal Prompts -->
+            <div class="resource-card group card p-7 rounded-3xl calm-shadow flex flex-col">
+                <div class="resource-icon w-11 h-11 bg-[#e6f4f1] text-[#1abc9c] rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-pen-fancy text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight">Daily Journal Prompts</h4>
+                <p class="text-sm mt-2 text-[#5c6c6b] flex-1">Thoughtfully written prompts to deepen self-understanding. New set delivered every morning.</p>
+                <button onclick="downloadJournalPrompts()" class="mt-6 text-sm font-semibold text-[#1abc9c] hover:text-[#159d84] flex items-center gap-2 transition-all group-hover:gap-3">
+                    DOWNLOAD TODAY’S PROMPTS <i class="fa-solid fa-download text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Resource 3: Worksheets -->
+            <div class="resource-card group card p-7 rounded-3xl calm-shadow flex flex-col">
+                <div class="resource-icon w-11 h-11 bg-[#e6f4f1] text-[#1abc9c] rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-file-lines text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight">Wellness Worksheets</h4>
+                <p class="text-sm mt-2 text-[#5c6c6b] flex-1">Printable anxiety toolkits, emotion wheels, boundary scripts, and values clarification exercises.</p>
+                <button onclick="downloadWorksheets()" class="mt-6 text-sm font-semibold text-[#1abc9c] hover:text-[#159d84] flex items-center gap-2 transition-all group-hover:gap-3">
+                    GET THE TOOLKIT <i class="fa-solid fa-download text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Resource 4: Breathing Exercises -->
+            <div class="resource-card group card p-7 rounded-3xl calm-shadow flex flex-col">
+                <div class="resource-icon w-11 h-11 bg-[#e6f4f1] text-[#1abc9c] rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fa-solid fa-wind text-2xl"></i>
+                </div>
+                <h4 class="font-semibold text-xl tracking-tight">Breathwork Exercises</h4>
+                <p class="text-sm mt-2 text-[#5c6c6b] flex-1">Interactive guided breathing practices including 4-7-8, box breathing, and physiological sigh.</p>
+                <button onclick="openBreathingExercise()" class="mt-6 text-sm font-semibold text-[#1abc9c] hover:text-[#159d84] flex items-center gap-2 transition-all group-hover:gap-3">
+                    START BREATHING EXERCISE <i class="fa-solid fa-play text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FINAL CALL-TO-ACTION ==================== -->
+    <section class="serene-section max-w-screen-2xl mx-auto px-6 md:px-12 pb-16">
+        <div class="bg-gradient-to-br from-[#2c3e50] to-[#1f2e3c] text-white rounded-[42px] px-10 md:px-16 py-16 md:py-20 text-center relative overflow-hidden">
+            <!-- Subtle decorative lotuses -->
+            <div class="absolute -top-6 -right-4 text-white/5 text-[180px]">
+                <i class="fa-solid fa-spa"></i>
+            </div>
+            <div class="absolute -bottom-12 -left-6 text-white/5 text-[130px]">
+                <i class="fa-solid fa-spa"></i>
+            </div>
+
+            <div class="relative max-w-2xl mx-auto">
+                <h2 class="heading-serif text-5xl md:text-[60px] leading-none tracking-[-1.8px]">Your calm is waiting.<br>Let’s begin together.</h2>
+                
+                <p class="mt-5 text-lg text-[#a8b5a2]">Join thousands who have found clarity, peace, and self-trust through our compassionate approach.</p>
+
+                <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openJourneyModal()" 
+                            class="premium-button px-9 py-4 bg-[#1abc9c] hover:bg-[#159d84] text-white text-base font-semibold rounded-3xl shadow-lg tracking-[0.4px] w-full sm:w-auto">
+                        Begin Your Journey — Free for 30 Days
+                    </button>
+                    <button onclick="document.getElementById('resources').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-9 py-4 bg-white/10 hover:bg-white/15 text-white border border-white/30 text-base font-semibold rounded-3xl transition-colors w-full sm:w-auto">
+                        Browse Free Resources
+                    </button>
+                </div>
+                <div class="text-xs text-[#7f8f8f] mt-4 tracking-wider">No credit card required • Cancel anytime</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="border-t border-[#e8e1d9] bg-white pt-14 pb-9">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-y-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-x-3 mb-4">
+                        <img src="assets/logo1.jpg" alt="Serene Minds" class="h-9">
+                        <span class="font-semibold text-xl">Serene Minds</span>
+                    </div>
+                    <p class="text-xs text-[#6b7f6b] max-w-[180px]">A sanctuary for the mind. Compassionate guidance for those ready to heal.</p>
+                </div>
+
+                <div>
+                    <div class="font-semibold text-sm mb-4 tracking-wider">EXPLORE</div>
+                    <div class="space-y-[9px] text-sm text-[#5c6c6b]">
+                        <div><a href="#topics" class="hover:text-[#1abc9c]">Focus Areas</a></div>
+                        <div><a href="#articles" class="hover:text-[#1abc9c]">Latest Insights</a></div>
+                        <div><a href="#resources" class="hover:text-[#1abc9c]">Free Tools</a></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-semibold text-sm mb-4 tracking-wider">COMPANY</div>
+                    <div class="space-y-[9px] text-sm text-[#5c6c6b]">
+                        <div><a href="#" onclick="showAboutModal()" class="hover:text-[#1abc9c]">About Us</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Our Clinicians</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Research &amp; Impact</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Careers</a></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-semibold text-sm mb-4 tracking-wider">SUPPORT</div>
+                    <div class="space-y-[9px] text-sm text-[#5c6c6b]">
+                        <div><a href="#" class="hover:text-[#1abc9c]">Contact Us</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Help Center</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Community Guidelines</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Crisis Resources</a></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-semibold text-sm mb-4 tracking-wider">LEGAL</div>
+                    <div class="space-y-[9px] text-sm text-[#5c6c6b]">
+                        <div><a href="#" class="hover:text-[#1abc9c]">Privacy Policy</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Terms of Service</a></div>
+                        <div><a href="#" class="hover:text-[#1abc9c]">Accessibility</a></div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="text-xs text-[#6b7f6b] mb-2.5 font-medium tracking-wider">FOLLOW US</div>
+                        <div class="flex gap-x-4 text-[#6b7f6b]">
+                            <a href="#" class="hover:text-[#1abc9c]"><i class="fa-brands fa-instagram text-lg"></i></a>
+                            <a href="#" class="hover:text-[#1abc9c]"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                            <a href="#" class="hover:text-[#1abc9c]"><i class="fa-brands fa-pinterest text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-7 border-t border-[#e8e1d9] text-xs text-[#6b7f6b] flex flex-col md:flex-row gap-y-2 items-center justify-between">
+                <div>© 2026 Serene Minds. All rights reserved. A space for healing, not perfection.</div>
+                <div class="flex gap-x-5">
+                    <span>Clinical Advisory Board</span>
+                    <span>•</span>
+                    <span>Member of the International Association of Psychology</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- Journey Modal -->
+    <div id="journey-modal" onclick="if (event.target.id === 'journey-modal') closeJourneyModal()" class="hidden fixed inset-0 z-[70] bg-black/60 backdrop-blur flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden">
+            <div class="px-8 pt-8 pb-7">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="text-[#1abc9c] text-xs tracking-[1.5px] font-semibold">STEP 1 OF 3</div>
+                        <h3 class="heading-serif text-4xl tracking-[-1px] mt-1">Begin your journey</h3>
+                    </div>
+                    <button onclick="closeJourneyModal()" class="text-[#a8b5a2] hover:text-[#2c3e50] text-2xl leading-none">&times;</button>
+                </div>
+
+                <div class="mt-7 space-y-5">
+                    <div>
+                        <label class="block text-xs font-medium tracking-wider text-[#6b7f6b] mb-1.5">WHAT BRINGS YOU HERE?</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="px-4 py-[13px] border border-[#d4c9b8] hover:border-[#1abc9c] rounded-2xl text-sm cursor-pointer transition-colors" onclick="selectJourneyOption(this, 'Anxiety or stress management')">Anxiety or stress</div>
+                            <div class="px-4 py-[13px] border border-[#d4c9b8] hover:border-[#1abc9c] rounded-2xl text-sm cursor-pointer transition-colors" onclick="selectJourneyOption(this, 'Seeking more calm &amp; presence')">More calm &amp; presence</div>
+                            <div class="px-4 py-[13px] border border-[#d4c9b8] hover:border-[#1abc9c] rounded-2xl text-sm cursor-pointer transition-colors" onclick="selectJourneyOption(this, 'Emotional healing')">Emotional healing</div>
+                            <div class="px-4 py-[13px] border border-[#d4c9b8] hover:border-[#1abc9c] rounded-2xl text-sm cursor-pointer transition-colors" onclick="selectJourneyOption(this, 'Personal growth')">Personal growth</div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-medium tracking-wider text-[#6b7f6b] mb-1.5">YOUR NAME</label>
+                            <input type="text" id="journey-name" placeholder="Alex Rivera" class="w-full border border-[#d4c9b8] focus:border-[#1abc9c] outline-none px-5 py-3 text-sm rounded-2xl">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium tracking-wider text-[#6b7f6b] mb-1.5">EMAIL ADDRESS</label>
+                            <input type="email" id="journey-email" placeholder="you@domain.com" class="w-full border border-[#d4c9b8] focus:border-[#1abc9c] outline-none px-5 py-3 text-sm rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#f8f5f2] px-8 py-5 border-t border-[#e8e1d9] flex justify-end gap-x-3">
+                <button onclick="closeJourneyModal()" class="px-6 py-[11px] text-sm text-[#6b7f6b] hover:text-[#2c3e50]">Maybe later</button>
+                <button onclick="submitJourneyForm()" class="premium-button bg-[#1abc9c] text-white px-8 py-[11px] text-sm font-semibold rounded-3xl">Create My Free Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" onclick="if (event.target.id === 'search-modal') closeSearchModal()" class="hidden fixed inset-0 z-[70] bg-black/50 backdrop-blur-[2px] flex items-start justify-center pt-20 p-6">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full max-w-xl rounded-3xl shadow-xl overflow-hidden">
+            <div class="flex items-center border-b border-[#e8e1d9] px-6">
+                <i class="fa-solid fa-search text-[#a8b5a2]"></i>
+                <input id="search-input" type="text" placeholder="Search topics, articles, or practices..." 
+                       onkeyup="filterSearchResults()"
+                       class="flex-1 bg-transparent border-none outline-none px-4 py-[18px] text-lg placeholder:text-[#a8b5a2]">
+                <div onclick="closeSearchModal()" class="text-[#a8b5a2] hover:text-black cursor-pointer text-sm">ESC</div>
+            </div>
+            <div id="search-results" class="max-h-[380px] overflow-auto p-2 text-sm">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div id="article-modal" onclick="if (event.target.id === 'article-modal') closeArticleModal()" class="hidden fixed inset-0 z-[80] bg-black/70 backdrop-blur flex items-center justify-center p-4 md:p-8">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl max-h-[92vh] flex flex-col">
+            <div class="relative">
+                <img id="article-modal-image" class="w-full h-64 object-cover" alt="">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"></div>
+                <button onclick="closeArticleModal()" class="absolute top-5 right-5 bg-white/90 hover:bg-white text-[#2c3e50] w-9 h-9 flex items-center justify-center rounded-2xl text-xl">&times;</button>
+            </div>
+            
+            <div class="px-8 md:px-10 pt-7 pb-8 overflow-y-auto flex-1">
+                <div class="flex items-center gap-3 text-xs">
+                    <span id="article-modal-tag" class="px-3 py-1 bg-[#e6f4f1] text-[#1abc9c] rounded-full font-medium"></span>
+                    <span id="article-modal-meta" class="text-[#6b7f6b]"></span>
+                </div>
+                <h2 id="article-modal-title" class="heading-serif text-[#2c3e50] text-[34px] leading-none tracking-[-1.2px] mt-4"></h2>
+                
+                <div class="prose prose-stone text-[#3f4f4e] mt-6 max-w-none text-[15px] leading-relaxed wellness-text" id="article-modal-body">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <div class="border-t border-[#e8e1d9] px-8 py-5 bg-[#f8f5f2] flex items-center justify-between text-sm">
+                <div class="flex items-center gap-4 text-[#6b7f6b]">
+                    <button class="hover:text-[#1abc9c] flex items-center gap-x-2"><i class="fa-solid fa-bookmark"></i> <span class="hidden sm:inline">Save</span></button>
+                    <button class="hover:text-[#1abc9c] flex items-center gap-x-2"><i class="fa-solid fa-share"></i> <span class="hidden sm:inline">Share</span></button>
+                </div>
+                <button onclick="closeArticleModal()" class="font-semibold text-[#1abc9c]">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breathing Exercise Modal -->
+    <div id="breathing-modal" onclick="if (event.target.id === 'breathing-modal') closeBreathingModal()" class="hidden fixed inset-0 z-[90] bg-black/75 backdrop-blur flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white max-w-md w-full rounded-3xl overflow-hidden shadow-2xl">
+            <div class="px-8 pt-8 pb-6 text-center">
+                <div class="text-[#1abc9c] mb-1"><i class="fa-solid fa-wind text-3xl"></i></div>
+                <h3 class="heading-serif text-3xl tracking-tight">Guided Breathwork</h3>
+                <p id="breathing-instruction" class="mt-2 text-[#5c6c6b]">Choose a practice below</p>
+            </div>
+
+            <!-- Breathing visual -->
+            <div class="flex justify-center py-4 bg-[#f8f5f2]">
+                <div id="breathing-circle" onclick="toggleBreathing()" 
+                     class="w-44 h-44 rounded-full bg-gradient-to-br from-[#1abc9c] to-[#159d84] flex items-center justify-center cursor-pointer shadow-[0_0_0_18px_rgba(26,188,156,0.1),0_0_0_36px_rgba(26,188,156,0.05)] transition-all duration-[3500ms]">
+                    <div class="text-white text-center">
+                        <div id="breathing-status" class="font-semibold text-lg tracking-wider">READY</div>
+                        <div id="breathing-count" class="text-xs opacity-75 mt-px">TAP TO BEGIN</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 pt-4 bg-white grid grid-cols-2 gap-3 text-sm">
+                <button onclick="startBreathingPattern(4, 4, 4, 'Box Breathing')" class="px-5 py-3 bg-[#f8f5f2] hover:bg-[#e6f4f1] rounded-2xl text-left transition-colors">
+                    <div class="font-semibold">Box Breathing</div>
+                    <div class="text-xs text-[#6b7f6b]">4s in • 4s hold • 4s out</div>
+                </button>
+                <button onclick="startBreathingPattern(4, 7, 8, '4-7-8 Breath')" class="px-5 py-3 bg-[#f8f5f2] hover:bg-[#e6f4f1] rounded-2xl text-left transition-colors">
+                    <div class="font-semibold">4-7-8 Breath</div>
+                    <div class="text-xs text-[#6b7f6b]">4s in • 7s hold • 8s out</div>
+                </button>
+                <button onclick="startBreathingPattern(5, 0, 5, 'Physiological Sigh')" class="px-5 py-3 bg-[#f8f5f2] hover:bg-[#e6f4f1] rounded-2xl text-left transition-colors col-span-2">
+                    <div class="font-semibold">Physiological Sigh</div>
+                    <div class="text-xs text-[#6b7f6b]">Two short inhales + long exhale — fastest way to calm the nervous system</div>
+                </button>
+            </div>
+
+            <div class="px-6 pb-7 text-center">
+                <button onclick="closeBreathingModal()" class="text-xs tracking-wider text-[#6b7f6b] hover:text-[#2c3e50]">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script configuration
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-teal', '#1abc9c');
+        }
+
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 40) {
+                    navbar.classList.add('nav-scrolled', 'shadow-sm');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'shadow-sm');
+                }
+                
+                lastScroll = currentScroll;
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                btn.innerHTML = '<i class="fa-solid fa-times text-xl"></i>';
+            } else {
+                menu.classList.add('hidden');
+                btn.innerHTML = '<i class="fa-solid fa-bars text-lg"></i>';
+            }
+        }
+
+        // Journey modal
+        let selectedJourneyGoal = '';
+
+        function openJourneyModal() {
+            const modal = document.getElementById('journey-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Reset state
+            selectedJourneyGoal = '';
+            document.getElementById('journey-name').value = '';
+            document.getElementById('journey-email').value = '';
+            
+            // Clear any selected options
+            document.querySelectorAll('#journey-modal .px-4').forEach(el => {
+                el.classList.remove('!border-[#1abc9c]', 'bg-[#e6f4f1]');
+            });
+        }
+
+        function closeJourneyModal() {
+            const modal = document.getElementById('journey-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function selectJourneyOption(element, goal) {
+            // Deselect all
+            document.querySelectorAll('#journey-modal .px-4').forEach(el => {
+                el.classList.remove('!border-[#1abc9c]', 'bg-[#e6f4f1]');
+            });
+            
+            // Select this one
+            element.classList.add('!border-[#1abc9c]', 'bg-[#e6f4f1]');
+            selectedJourneyGoal = goal;
+        }
+
+        function submitJourneyForm() {
+            const name = document.getElementById('journey-name').value.trim();
+            const email = document.getElementById('journey-email').value.trim();
+
+            if (!name || !email) {
+                alert('Please enter your name and email to begin.');
+                return;
+            }
+
+            if (!selectedJourneyGoal) {
+                alert('Please select what brings you here.');
+                return;
+            }
+
+            const modal = document.getElementById('journey-modal');
+            
+            // Beautiful success state
+            modal.innerHTML = `
+                <div class="bg-white w-full max-w-lg rounded-3xl p-10 text-center">
+                    <div class="mx-auto w-16 h-16 flex items-center justify-center bg-[#e6f4f1] text-[#1abc9c] rounded-full mb-6">
+                        <i class="fa-solid fa-check text-3xl"></i>
+                    </div>
+                    <h3 class="heading-serif text-3xl text-[#2c3e50]">Welcome, ${name.split(' ')[0]}.</h3>
+                    <p class="mt-3 text-[#5c6c6b]">Your personalized path to calm is being prepared. We’ve sent a welcome email to <span class="font-medium">${email}</span>.</p>
+                    
+                    <div class="mt-8 text-left bg-[#f8f5f2] rounded-2xl p-5 text-sm">
+                        <div class="font-semibold mb-2 text-[#2c3e50]">Next steps:</div>
+                        <ol class="list-decimal ml-5 space-y-1 text-[#5c6c6b]">
+                            <li>Check your inbox for your welcome guide</li>
+                            <li>Complete your 2-minute wellness profile</li>
+                            <li>Explore your first recommended practice</li>
+                        </ol>
+                    </div>
+
+                    <button onclick="closeJourneyModalAndReset(); window.location.reload()" 
+                            class="mt-7 premium-button w-full bg-[#2c3e50] hover:bg-black text-white font-semibold py-3.5 rounded-3xl">
+                        Continue to Dashboard
+                    </button>
+                </div>
+            `;
+        }
+
+        function closeJourneyModalAndReset() {
+            // Reloads the page to reset modal content
+            document.getElementById('journey-modal').classList.add('hidden');
+            document.getElementById('journey-modal').classList.remove('flex');
+        }
+
+        // Search functionality
+        const searchData = [
+            { title: "Anxiety & Stress", type: "Topic", section: "topics" },
+            { title: "Mindfulness & Meditation", type: "Topic", section: "topics" },
+            { title: "Self-Compassion", type: "Topic", section: "topics" },
+            { title: "The Quiet Power of Doing Less", type: "Article", section: "articles" },
+            { title: "How to Speak to Yourself When It Hurts", type: "Article", section: "articles" },
+            { title: "Guided Meditations", type: "Resource", section: "resources" },
+            { title: "Breathwork Exercises", type: "Resource", section: "resources" },
+            { title: "Daily Journal Prompts", type: "Resource", section: "resources" },
+            { title: "Emotional Intelligence", type: "Topic", section: "topics" },
+            { title: "The Sacred Art of Winding Down", type: "Article", section: "articles" },
+            { title: "Trauma Healing", type: "Topic", section: "topics" },
+        ];
+
+        function openSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                document.getElementById('search-input').focus();
+                renderSearchResults(searchData);
+            }, 120);
+        }
+
+        function closeSearchModal() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.getElementById('search-results').innerHTML = '';
+        }
+
+        function renderSearchResults(results) {
+            const container = document.getElementById('search-results');
+            container.innerHTML = '';
+
+            if (results.length === 0) {
+                container.innerHTML = `<div class="px-5 py-6 text-sm text-[#6b7f6b]">No matches found. Try “anxiety” or “meditation”.</div>`;
+                return;
+            }
+
+            results.forEach(item => {
+                const el = document.createElement('div');
+                el.className = `px-5 py-[13px] flex items-center gap-3 rounded-2xl hover:bg-[#f8f5f2] cursor-pointer transition-colors`;
+                el.innerHTML = `
+                    <div class="flex-1">
+                        <div class="font-medium text-[#2c3e50]">${item.title}</div>
+                        <div class="text-xs text-[#6b7f6b]">${item.type}</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-[#a8b5a2]"></i>
+                `;
+                
+                el.onclick = () => {
+                    closeSearchModal();
+                    if (item.section === 'topics') {
+                        document.getElementById('topics').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else if (item.section === 'articles') {
+                        document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+                    } else if (item.section === 'resources') {
+                        document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
+                    }
+                };
+                container.appendChild(el);
+            });
+        }
+
+        function filterSearchResults() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            
+            if (!query) {
+                renderSearchResults(searchData);
+                return;
+            }
+
+            const filtered = searchData.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.type.toLowerCase().includes(query)
+            );
+            
+            renderSearchResults(filtered);
+        }
+
+        // Article data
+        const articles = [
+            {
+                title: "The Quiet Power of Doing Less",
+                tag: "MINDFULNESS",
+                meta: "Dr. Lena Voss • 11 min read",
+                image: "assets/article1.jpg",
+                body: `<p>In our relentless pursuit of productivity, we have forgotten a profound truth: rest is not the opposite of work — it is the foundation upon which meaningful work is built.</p>
+                <p class="mt-4">When we allow ourselves to slow down, the nervous system can finally exit survival mode. The prefrontal cortex, responsible for creativity, empathy, and wise decision-making, regains its full capacity.</p>
+                <h4 class="font-semibold mt-8 mb-2 text-[#2c3e50]">A simple practice</h4>
+                <p>Begin by giving yourself permission to do one less thing today. Notice what arises when you are not constantly filling space. The discomfort that emerges is often the doorway to deeper peace.</p>`
+            },
+            {
+                title: "How to Speak to Yourself When It Hurts",
+                tag: "SELF-COMPASSION",
+                meta: "Dr. Marcus Hale • 14 min read",
+                image: "assets/article2.jpg",
+                body: `<p>The voice we use with ourselves during moments of pain becomes the blueprint for how we heal. Many of us speak to ourselves in ways we would never accept from another human being.</p>
+                <p class="mt-4">Research in self-compassion shows that when we treat ourselves kindly in suffering, we actually become more resilient — not less motivated. The nervous system interprets self-kindness as safety.</p>
+                <h4 class="font-semibold mt-8 mb-2 text-[#2c3e50]">Try this</h4>
+                <p>Place your hand on your heart. Whisper: “This is hard. I’m here with you.” Then ask: “What do I need right now?” Listen without judgment.</p>`
+            },
+            {
+                title: "The Hidden Cost of Emotional Avoidance",
+                tag: "EMOTIONAL HEALTH",
+                meta: "Dr. Aisha Patel • 9 min read",
+                image: "assets/meditation.jpg",
+                body: `<p>Emotional avoidance is one of the most common — and most costly — coping strategies we develop. By pushing away difficult feelings, we also mute our capacity for joy, connection, and presence.</p>
+                <p class="mt-4">Emotions are information. When we consistently ignore or suppress them, the body keeps the score in the form of anxiety, tension, and disconnection.</p>
+                <p class="mt-4">The path forward is not wallowing, but gentle allowing. Learning to stay with feelings, even uncomfortable ones, for just 90 seconds at a time can fundamentally change our relationship with our inner world.</p>`
+            },
+            {
+                title: "The Sacred Art of Winding Down",
+                tag: "SLEEP & REST",
+                meta: "Dr. Theo Rivera • 18 min read",
+                image: "assets/hero-bg.jpg",
+                body: `<p>Sleep is not merely a biological necessity. It is a deeply spiritual practice — a nightly return to trust, surrender, and renewal.</p>
+                <p class="mt-4">Most modern sleep advice focuses on hygiene. While helpful, it often misses the deeper need: a nervous system that feels safe enough to let go.</p>
+                <h4 class="font-semibold mt-8 mb-2 text-[#2c3e50]">Evening ritual framework</h4>
+                <ul class="list-disc ml-5 mt-2 space-y-1 text-[#5c6c6b]">
+                    <li>Dim lights 90 minutes before bed</li>
+                    <li>Write three things you are releasing today</li>
+                    <li>One minute of physiological sighing</li>
+                    <li>Gratitude for your body’s capacity to rest</li>
+                </ul>`
+            }
+        ];
+
+        function openArticleModal(index) {
+            const modal = document.getElementById('article-modal');
+            const article = articles[index];
+
+            document.getElementById('article-modal-image').src = article.image;
+            document.getElementById('article-modal-tag').textContent = article.tag;
+            document.getElementById('article-modal-meta').textContent = article.meta;
+            document.getElementById('article-modal-title').textContent = article.title;
+            document.getElementById('article-modal-body').innerHTML = article.body;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('article-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function showAllArticles() {
+            document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Topic selection
+        function selectTopic(topicName) {
+            const section = document.getElementById('topics');
+            
+            // Nice toast notification
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-8 left-1/2 -translate-x-1/2 bg-[#2c3e50] text-white px-7 py-3 rounded-3xl shadow-xl flex items-center gap-3 z-[100] text-sm`;
+            toast.innerHTML = `
+                <span>Opening <strong>${topicName}</strong> pathway…</span>
+                <button onclick="this.parentElement.remove()" class="text-[#1abc9c] font-medium">Close</button>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 2600);
+
+            // Scroll to topics if not already visible
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Breathing exercise
+        let breathingInterval = null;
+        let isBreathing = false;
+
+        function openBreathingExercise() {
+            const modal = document.getElementById('breathing-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            resetBreathingUI();
+        }
+
+        function closeBreathingModal() {
+            const modal = document.getElementById('breathing-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            stopBreathing();
+        }
+
+        function resetBreathingUI() {
+            const circle = document.getElementById('breathing-circle');
+            const status = document.getElementById('breathing-status');
+            const count = document.getElementById('breathing-count');
+            
+            circle.style.transform = 'scale(1)';
+            status.textContent = 'READY';
+            count.textContent = 'TAP TO BEGIN';
+            isBreathing = false;
+        }
+
+        function toggleBreathing() {
+            if (!isBreathing) {
+                // Start default pattern
+                startBreathingPattern(4, 4, 4, 'Box Breathing');
+            } else {
+                stopBreathing();
+            }
+        }
+
+        function startBreathingPattern(inSec, holdSec, outSec, label) {
+            stopBreathing();
+            
+            const circle = document.getElementById('breathing-circle');
+            const status = document.getElementById('breathing-status');
+            const countEl = document.getElementById('breathing-count');
+            const instruction = document.getElementById('breathing-instruction');
+
+            instruction.textContent = label;
+            isBreathing = true;
+
+            let phase = 'in';
+            let secondsLeft = inSec;
+
+            status.textContent = 'INHALE';
+            countEl.textContent = secondsLeft;
+            circle.style.transform = 'scale(1.2)';
+
+            breathingInterval = setInterval(() => {
+                secondsLeft--;
+
+                if (secondsLeft <= 0) {
+                    if (phase === 'in') {
+                        phase = 'hold';
+                        secondsLeft = holdSec || 1;
+                        status.textContent = holdSec > 0 ? 'HOLD' : 'EXHALE';
+                        circle.style.transform = 'scale(1.2)';
+                    } else if (phase === 'hold') {
+                        phase = 'out';
+                        secondsLeft = outSec;
+                        status.textContent = 'EXHALE';
+                        circle.style.transform = 'scale(0.75)';
+                    } else {
+                        // cycle complete
+                        phase = 'in';
+                        secondsLeft = inSec;
+                        status.textContent = 'INHALE';
+                        circle.style.transform = 'scale(1.2)';
+                    }
+                }
+
+                countEl.textContent = secondsLeft;
+            }, 1000);
+        }
+
+        function stopBreathing() {
+            if (breathingInterval) {
+                clearInterval(breathingInterval);
+                breathingInterval = null;
+            }
+            isBreathing = false;
+            resetBreathingUI();
+        }
+
+        // Resource actions
+        function startGuidedMeditations() {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-8 right-8 bg-white border border-[#e8e1d9] shadow-xl rounded-3xl px-6 py-5 max-w-xs z-[100]`;
+            toast.innerHTML = `
+                <div class="font-semibold">Meditation Library</div>
+                <div class="text-sm mt-1 text-[#5c6c6b]">Opening the full library in a new tab...</div>
+                <div class="flex gap-3 mt-4">
+                    <button onclick="this.closest('.fixed').remove()" class="text-xs px-4 py-1.5 bg-[#f8f5f2] rounded-2xl">CLOSE</button>
+                    <button onclick="window.open('#', '_blank'); this.closest('.fixed').remove()" class="text-xs px-4 py-1.5 bg-[#1abc9c] text-white rounded-2xl">OPEN LIBRARY</button>
+                </div>
+            `;
+            document.body.appendChild(toast);
+        }
+
+        function downloadJournalPrompts() {
+            const link = document.createElement('a');
+            link.href = '#';
+            document.body.appendChild(link);
+            
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-8 right-8 px-6 py-4 bg-[#2c3e50] text-white rounded-3xl shadow-xl flex items-center gap-x-3 z-[100] text-sm`;
+            toast.innerHTML = `
+                <div>Downloaded “Today’s Journal Prompts.pdf”</div>
+                <button onclick="this.parentElement.remove()" class="text-[#1abc9c] font-semibold">OK</button>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 4500);
+        }
+
+        function downloadWorksheets() {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-8 right-8 px-6 py-4 bg-[#2c3e50] text-white rounded-3xl shadow-xl flex items-center gap-x-3 z-[100] text-sm`;
+            toast.innerHTML = `
+                <div>Thank you. The complete Wellness Toolkit (PDF) has been sent to your downloads.</div>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 3800);
+        }
+
+        // Subtle topic hover polish + keyboard escape handling
+        function initKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    // Close any open modals in priority order
+                    const modals = ['breathing-modal', 'article-modal', 'search-modal', 'journey-modal'];
+                    for (let id of modals) {
+                        const m = document.getElementById(id);
+                        if (!m.classList.contains('hidden') && m.classList.contains('flex')) {
+                            if (id === 'breathing-modal') {
+                                closeBreathingModal();
+                            } else if (id === 'article-modal') {
+                                closeArticleModal();
+                            } else if (id === 'search-modal') {
+                                closeSearchModal();
+                            } else if (id === 'journey-modal') {
+                                closeJourneyModal();
+                            }
+                            return;
+                        }
+                    }
+                }
+                
+                if (e.key === "/" && document.activeElement.tagName === "BODY") {
+                    e.preventDefault();
+                    openSearchModal();
+                }
+            });
+
+            // Add subtle scroll progress hint on hero (optional polish)
+            console.log('%c[Serene Minds] Premium calming website initialized successfully.', 'color:#a8b5a2');
+        }
+
+        function initSmoothScroll() {
+            // Already handled by CSS + anchor links. Extra: improve focus
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+
+        function initInteractiveCards() {
+            // Optional micro-hover on topic cards
+            document.querySelectorAll('.topic-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.borderColor = '#d4e8e3';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.borderColor = '#f0ebe3';
+                });
+            });
+        }
+
+        function showAboutModal() {
+            const modal = document.createElement('div');
+            modal.className = `fixed inset-0 z-[80] flex items-center justify-center bg-black/60 p-6`;
+            modal.innerHTML = `
+                <div onclick="event.target.remove()" class="modal max-w-lg w-full bg-white rounded-3xl p-9 text-center">
+                    <div class="mx-auto text-[#1abc9c] mb-5"><i class="fa-solid fa-spa text-4xl"></i></div>
+                    <h3 class="heading-serif text-4xl tracking-tight">A sanctuary for the mind</h3>
+                    <p class="mt-4 text-[#5c6c6b]">Founded in 2017 by clinical psychologists and mindfulness teachers, Serene Minds exists to make evidence-based, deeply compassionate mental wellness accessible to everyone.</p>
+                    
+                    <div class="mt-8 grid grid-cols-3 gap-4 text-left">
+                        <div class="text-sm"><span class="font-semibold block text-[#2c3e50]">28</span>Clinicians</div>
+                        <div class="text-sm"><span class="font-semibold block text-[#2c3e50]">142k</span>Guided Sessions</div>
+                        <div class="text-sm"><span class="font-semibold block text-[#2c3e50]">19</span>Countries</div>
+                    </div>
+                    
+                    <button onclick="this.closest('.fixed').remove()" class="mt-9 px-8 py-3 text-sm font-semibold bg-[#2c3e50] text-white rounded-3xl">Close</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function initTopicClickFeedback() {
+            // Already handled in selectTopic
+        }
+
+        // Main initialization
+        function initializeWebsite() {
+            initializeTailwind();
+            initNavbar();
+            initSmoothScroll();
+            initKeyboardShortcuts();
+            initInteractiveCards();
+            initTopicClickFeedback();
+
+            // Prefetch subtle hover states and make sure everything feels alive
+            console.log('%c[Serene Minds] All premium micro-interactions and modals ready.', 'color:#6b7f6b; font-size: 9px');
+
+            // Optional: Easter egg — pressing "L" shows a floating lotus
+            let lotusCount = 0;
+            document.addEventListener('keypress', function(e) {
+                if (e.key.toLowerCase() === 'l' && lotusCount < 3) {
+                    lotusCount++;
+                    const lotus = document.createElement('div');
+                    lotus.className = `fixed text-[#1abc9c]/30 text-[110px] pointer-events-none z-[-1] lotus-float`;
+                    lotus.style.left = Math.random() * (window.innerWidth - 120) + 'px';
+                    lotus.style.top = (Math.random() * 400 + 180) + 'px';
+                    lotus.innerHTML = '<i class="fa-solid fa-spa"></i>';
+                    document.body.appendChild(lotus);
+                    
+                    setTimeout(() => {
+                        if (lotus.parentNode) lotus.parentNode.removeChild(lotus);
+                        lotusCount--;
+                    }, 4200);
+                }
+            });
+
+            // Accessibility note
+            console.log('%c[Serene Minds] Website is fully keyboard accessible. Press "/" to open search.', 'font-size:9px; color:#a8b5a2');
+        }
+
+        // Boot the experience
+        window.onload = function() {
+            initializeWebsite();
+        };
+
+        // Bonus: Make the logo in nav slightly pulse on load for delight
+        setTimeout(() => {
+            const navLogo = document.querySelector('nav img');
+            if (navLogo) {
+                navLogo.style.transition = 'transform 600ms ease';
+                navLogo.addEventListener('mouseenter', () => navLogo.style.transform = 'scale(1.04)');
+                navLogo.addEventListener('mouseleave', () => navLogo.style.transform = 'scale(1)');
+            }
+        }, 1200);
+    </script>
+</body>
+</html>

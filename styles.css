@@ -1,0 +1,215 @@
+/* ============================================
+   Serene Minds - Custom Styles
+   Extracted from index.html for better maintainability
+   ============================================ */
+
+:root {
+    --teal: #1abc9c;
+    --navy: #2c3e50;
+    --sage: #a8b5a2;
+    --offwhite: #f8f5f2;
+    --softblue: #e8f0f4;
+}
+
+body {
+    font-family: 'Inter', system_ui, -apple-system, sans-serif;
+}
+
+.heading-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.serene-bg {
+    background-color: #f8f5f2;
+}
+
+.nav-scrolled {
+    background-color: rgba(248, 245, 242, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.section-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(to right, #1abc9c, #a8b5a2);
+    border-radius: 2px;
+}
+
+.topic-card, .article-card, .resource-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topic-card:hover, .article-card:hover, .resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #1abc9c;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.lotus-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #a8b5a2;
+}
+
+.lotus-divider::before,
+.lotus-divider::after {
+    content: '';
+    height: 1px;
+    background: linear-gradient(to right, transparent, #a8b5a2, transparent);
+    flex: 1;
+}
+
+.calm-shadow {
+    box-shadow: 0 10px 15px -3px rgb(44 62 80 / 0.08), 
+               0 4px 6px -4px rgb(44 62 80 / 0.08);
+}
+
+.premium-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgb(26 188 156 / 0.25), 
+               0 4px 6px -4px rgb(26 188 156 / 0.25);
+}
+
+.premium-button:active {
+    transform: translateY(0);
+}
+
+.soft-teal {
+    color: #1abc9c;
+}
+
+.deep-navy {
+    color: #2c3e50;
+}
+
+.sage-text {
+    color: #6b7f6b;
+}
+
+.card {
+    background: white;
+    border: 1px solid #f0ebe3;
+}
+
+.serene-gradient {
+    background: linear-gradient(135deg, #f8f5f2 0%, #f0ebe3 100%);
+}
+
+.modal {
+    animation: modalEnter 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.nav-active {
+    color: #1abc9c;
+    font-weight: 600;
+}
+
+.wellness-text {
+    line-height: 1.75;
+}
+
+.lotus-float {
+    animation: lotusFloat 4s ease-in-out infinite;
+}
+
+@keyframes lotusFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.breathing-circle {
+    transition: transform 3.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    box-shadow: 0 0 0 12px rgba(26, 188, 156, 0.08),
+                0 0 0 24px rgba(26, 188, 156, 0.05);
+}
+
+.article-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.testimonial-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subtle-lotus-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.035' d='M60 20C60 20 40 35 40 55C40 70 48 82 60 82C72 82 80 70 80 55C80 35 60 20 60 20Z' fill='%231abc9c'/%3E%3Cpath opacity='0.03' d='M60 28C60 28 46 38 46 52C46 62 51 70 60 70C69 70 74 62 74 52C74 38 60 28 60 28Z' fill='%232c3e50'/%3E%3C/svg%3E");
+    background-size: 110px 110px;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.focus-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+               background-color 0.3s ease;
+}
+
+.topic-card:hover .focus-icon {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.serene-section {
+    scroll-margin-top: 80px;
+}
+
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+.resource-icon {
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover .resource-icon {
+    transform: translateY(-2px) scale(1.05);
+}
